@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人简历 - 陆骏杰</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>陆骏杰</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#about" class="nav-link">关于我</a></li>
+                <li><a href="#education" class="nav-link">教育背景</a></li>
+                <li><a href="#experience" class="nav-link">工作经历</a></li>
+                <li><a href="#skills" class="nav-link">技能特长</a></li>
+                <li><a href="#projects" class="nav-link">项目经验</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="home">
+        <div class="container">
+            <div class="home-content">
+                <div class="home-text">
+                    <h2 class="home-subtitle">你好，我是</h2>
+                    <h1 class="home-title">陆骏杰</h1>
+                    <p class="home-description">AI产品经理 | 3年产品管理经验 | 智能体平台专家</p>
+                    <div class="home-buttons">
+                        <a href="#contact" class="btn btn-primary">联系我</a>
+                        <a href="#projects" class="btn btn-secondary">查看项目</a>
+                    </div>
+                </div>
+                <div class="home-image">
+                    <div class="image-container">
+                        <img src="https://picsum.photos/400/400" alt="陆骏杰" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">关于我</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>拥有 3 年产品管理经验，在 Midea CRM 项目中，主导智能推荐模块的规划与落地，通过引入语义搜索与智能商机解析，客户经理处理效率提升 35%，项目在 45 天内实现 120 万元提效收益。</p>
+                    <p>熟练操作 Dify、Coze 等智能体平台，基于 Coze 搭建 Salesmart 知识库智能体，结合 RAG 与 Prompt 优化，使召回率 94%、准确率 91%，销售查询效率提升 40%。</p>
+                    <p>熟练掌握 Few-Shot、Chain of Thought (CoT) 等提示词设计技巧。在智能客服项目中优化提示词策略，经过 5 轮迭代测试，将复杂问题的回答准确率从 78% 提升至 91%，显著降低人工客服介入率，节省每月 20 万元人力成本。</p>
+                    <p>深入研究 RAG（Retrieval-Augmented Generation）技术，并在企业知识库问答系统中应用。通过意图识别与 Query 重写优化方案，将检索召回率从 82% 提升至 94%，显著提升知识检索覆盖率与用户查询体验。</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">姓名：</span>
+                            <span class="info-value">陆骏杰</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">所在地：</span>
+                            <span class="info-value">广东广州</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">工作年限：</span>
+                            <span class="info-value">3 年</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">邮箱：</span>
+                            <span class="info-value">840103361@qq.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">手机号&微信号：</span>
+                            <span class="info-value">18675798250</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">求职意向：</span>
+                            <span class="info-value">AI产品经理</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills-preview">
+                    <h3>核心技能</h3>
+                    <div class="skills-preview">
+                        <div class="skill-tag">AI产品管理</div>
+                        <div class="skill-tag">RAG技术</div>
+                        <div class="skill-tag">Prompt工程</div>
+                        <div class="skill-tag">智能体平台</div>
+                        <div class="skill-tag">Dify</div>
+                        <div class="skill-tag">Coze</div>
+                        <div class="skill-tag">CRM系统</div>
+                        <div class="skill-tag">数据分析</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">教育背景</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>本科</h3>
+                        <p class="institution">广东财经大学华商学院</p>
+                        <p class="date">2018年 - 2022年</p>
+                        <p class="description">本科期间学习了产品管理、市场营销、数据分析等相关课程，为后续的产品经理工作奠定了坚实的基础。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">工作经历</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>AI产品经理</h3>
+                        <p class="company">上海汉得信息技术股份有限公司（Midea）</p>
+                        <p class="date">2025.03 - 2025.09</p>
+                        <ul class="responsibilities">
+                            <li>0→1交付与业务赋能：主导 B 端销售智能体全流程交付，覆盖需求定义、模型选型与上线迭代；通过智能线索分发与客户跟进助手，线索转化率提升 20%，客户运营效率提升 40%。</li>
+                            <li>产品规划与落地：独立完成 AI 应用场景筛选、竞品分析、需求梳理与交互设计；基于集团 Dify 平台交付销售对话智能体，实现客户规模化应用。</li>
+                            <li>Prompt 工程与模型优化：在客户问答场景中应用 Few Shots + CoT 策略，经8轮迭代将回答准确率从 78% 提升至 91%，显著降低人工介入率。</li>
+                            <li>数据集与评测体系建设：构建覆盖 2 万+ 销售对话的评测集，建立准确率、召回率、用户采纳率等多维指标，支撑模型持续优化，上线后用户采纳率提升至 87%。</li>
+                            <li>Badcase 分析与迭代：建立关键错误场景收集与诊断机制，联合算法团队优化核心模块，系统稳定性提升至 99%，满意度提升至 4.6/5。</li>
+                            <li>知识库建设与管理：梳理销售文档来源与更新频率，设计分块与标签体系，使查询效率提升 40%，客户响应时间缩短 30%。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>产品经理</h3>
+                        <p class="company">广州翼辅科技有限公司</p>
+                        <p class="date">2023.09 - 2025.03</p>
+                        <ul class="responsibilities">
+                            <li>技术突破：主导多引擎加权融合评分系统设计与落地，负责算法选型、模型评测与团队协调，评分准确率提升至95%，形成教育行业核心技术壁垒。</li>
+                            <li>用户洞察：基于60+用户访谈和2000+问卷分析，结合KANO模型定义核心功能，设计全链路OMO智能英语听说解决方案，上线后用户满意度提升至85%，活跃度提升30%。</li>
+                            <li>增长优化：搭建AARRR指标体系并优化注册→激活→付费漏斗，核心付费转化率从22%提升至29%。</li>
+                            <li>流程提效：优化跨部门SOP，明确责任分工与审批流程，产研延期率由35%降至12%，显著提升交付效率。</li>
+                            <li>成果落地：协调算法与研发团队，持续优化评分和学习推荐逻辑，使系统稳定性提升至98%，用户采纳率提升至87%。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>产品经理</h3>
+                        <p class="company">广州华腾教育科技有限公司</p>
+                        <p class="date">2022.06 — 2023.08（精简专业版）</p>
+                        <ul class="responsibilities">
+                            <li>产品规划与设计：完成20+竞品分析，确立“精准数据采集+极简交互”为核心策略，规划“平台+硬件+服务”一体化架构，覆盖2000+学生使用场景。</li>
+                            <li>智能批改与个性化练习落地：针对教师批改效率低和学生练习精准度不足的问题，引入OCR+NLP实现客观题自动批改（准确率98%，批改效率提升70%），基于IRT算法生成个性化练习，知识掌握效率提升50%，学生满意度达90%。</li>
+                            <li>用户反馈驱动优化：收集500+教师与学生反馈，将关键问题转化为迭代任务，优化练习内容和交互逻辑，使用户活跃率提升15%，复学率提升10%。</li>
+                            <li>数据分析支撑策略调整：基于练习完成率和答题准确率数据，调整个性化推荐算法，持续优化学习效果，知识掌握效率较上线前提升50%。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能特长 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">技能特长</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3>AI与数据能力</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">LLM应用</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">RAG技术</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Prompt Engineering</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">数据分析</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>产品方法与工具</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Dify</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Coze</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Axure</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Figma</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>技术与开发基础</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML/CSS/JavaScript</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">腾讯云微搭</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>语言能力</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">英语（CET-4）</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经验 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">项目经验</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=1" alt="企业级生成式AI销售助手">
+                    </div>
+                    <div class="project-content">
+                        <h3>企业级生成式AI销售助手</h3>
+                        <p class="project-description">针对传统CRM操作复杂、一线销售信息零散、记录效率低的痛点，搭建企业级 AI 销售助手，推动销售数字化转型。上线后销售人员获取信息平均耗时缩短60%，客户沟通纪要自动生成覆盖率达80%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">Prompt Engineering</span>
+                            <span class="project-tag">Dify</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=2" alt="AI商机查重系统">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI商机查重系统</h3>
+                        <p class="project-description">主导设计并落地 AI 商机查重系统，覆盖商机新建、审批及查重环节，成为各事业部标准化流程工具。商机审批平均耗时缩短70%，重复商机录入率显著下降。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Embedding</span>
+                            <span class="project-tag">CRM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=3" alt="考前全真练">
+                    </div>
+                    <div class="project-content">
+                        <h3>考前全真练</h3>
+                        <p class="project-description">面向中考英语听说备考场景，打造家庭端全真模拟产品，解决学生练习时间有限、缺乏真实考试环境的痛点。产品上线首月销售额80万（单地市级），会员转化1万单。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">ASR</span>
+                            <span class="project-tag">个性化学习</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=4" alt="智能英语听说考试系统">
+                    </div>
+                    <div class="project-content">
+                        <h3>智能英语听说考试系统</h3>
+                        <p class="project-description">响应教育部英语听说改革政策，解决机房兼容性差、人工评分效率低、缺乏全场景数据闭环问题。系统覆盖12省、2800万考生、380万场考试，市场占有率从17%升至29%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">多引擎评分</span>
+                            <span class="project-tag">教育科技</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=5" alt="AI英语口语对话系统">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI英语口语对话系统</h3>
+                        <p class="project-description">针对 K12 学生"哑巴英语"、教师批改效率低及评估体系单一的问题，打造行业首个全场景沉浸式 AI 口语教练。学生口语能力提升15%，留存率提升25%，教师批改效率提升35%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">ASR</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">教育科技</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=6" alt="CRM内部系统优化">
+                    </div>
+                    <div class="project-content">
+                        <h3>CRM内部系统优化</h3>
+                        <p class="project-description">主导全链路优化与智能化升级，提升销售、服务效率及客户留存。财务审核周期由72小时缩短至15分钟，工单人工干预率降至5%，新商机模块人均销售产出提升18%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">CRM</span>
+                            <span class="project-tag">数据分析</span>
+                            <span class="project-tag">流程优化</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=7" alt="智慧作业平台">
+                    </div>
+                    <div class="project-content">
+                        <h3>智慧作业平台</h3>
+                        <p class="project-description">打造 AI 驱动智慧作业平台，覆盖作业布置、批改、分析与反馈全流程。教师平均批改时长由50分钟降至30分钟，客观题自动批改准确率达98%，高频错题掌握率提升30%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">OCR</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">教育科技</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://picsum.photos/600/400?random=8" alt="题库组卷系统">
+                    </div>
+                    <div class="project-content">
+                        <h3>题库组卷系统</h3>
+                        <p class="project-description">打造集题库管理、智能组卷与学情分析于一体的教育系统，解决教师组卷效率低、题目版权分散及家长辅导资源不足问题。上线3个月，DAU提升30%，教师MAU达1.2万，单月流水增长25%。</p>
+                        <div class="project-tags">
+                            <span class="project-tag">教育科技</span>
+                            <span class="project-tag">智能组卷</span>
+                            <span class="project-tag">UGC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">联系我</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-text">840103361@qq.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span class="contact-text">18675798250</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span class="contact-text">广东广州</span>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">微博</a>
+                        <a href="#" class="social-link">知乎</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 陆骏杰. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

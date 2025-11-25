@@ -1,0 +1,33 @@
+# 编辑器配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+
+# 依赖文件
+node_modules/
+
+# 构建产物
+dist/
+build/
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# 测试文件
+coverage/
+.nyc_output/
+
+# 临时文件
+*.tmp
+*.temp
