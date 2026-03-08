@@ -703,6 +703,9 @@ section {
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 /* 联系我样式 */
@@ -1180,26 +1183,70 @@ html {
 .modal-results {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .metric-item {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 1rem;
-    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-lg);
     text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.metric-item:hover::before {
+    opacity: 1;
+}
+
+.metric-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.4), 0 4px 6px -2px rgba(99, 102, 241, 0.2);
+    scale: 1.02;
 }
 
 .metric-value {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .metric-label {
     font-size: 0.875rem;
     opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 /* 弹窗响应式设计 */

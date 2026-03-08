@@ -462,7 +462,7 @@ addScrollProgress();
 
 // 为所有可交互元素添加悬停效果
 function initHoverEffects() {
-    const interactiveElements = document.querySelectorAll('.nav-link, .btn, .skill-tag, .social-link, .project-card');
+    const interactiveElements = document.querySelectorAll('.nav-link, .btn, .skill-tag, .social-link');
     
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', function() {
