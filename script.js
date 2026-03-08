@@ -112,13 +112,30 @@ function initScrollAnimations() {
                 ease: 'power2.out'
             });
             
-            gsap.from('.profile-img', {
-                scale: 0.8,
-                opacity: 0,
-                duration: 1,
-                delay: 0.3,
-                ease: 'back.out(1.7)'
-            });
+            // 头像动画 - 使用更稳定的方式
+            const profileImg = document.querySelector('.profile-img');
+            if (profileImg) {
+                // 确保头像初始可见
+                profileImg.style.opacity = '1';
+                profileImg.style.visibility = 'visible';
+                profileImg.style.display = 'block';
+                
+                gsap.from('.profile-img', {
+                    scale: 0.8,
+                    opacity: 1, // 保持初始可见
+                    duration: 1,
+                    delay: 0.3,
+                    ease: 'back.out(1.7)',
+                    onComplete: function() {
+                        // 动画完成后确保头像可见
+                        if (profileImg) {
+                            profileImg.style.opacity = '1';
+                            profileImg.style.visibility = 'visible';
+                            profileImg.style.display = 'block';
+                        }
+                    }
+                });
+            }
             
             // 技能条动画
             gsap.from('.skill-progress', {
@@ -225,26 +242,189 @@ function initSkillBars() {
     observer.observe(skillsSection);
 }
 
+// 项目数据
+const projectData = {
+    '企业级生成式AI销售助手': {
+        fullContent: [
+            '针对传统CRM操作复杂、一线销售信息零散、记录效率低的痛点，搭建企业级 AI 销售助手',
+            '通过智能线索分发与客户跟进助手，线索转化率提升 20%，客户运营效率提升 40%',
+            '在客户问答场景中应用 Few Shots + CoT 策略，经8轮迭代将回答准确率从 78% 提升至 91%',
+            '构建覆盖 2 万+ 销售对话的评测集，建立准确率、召回率、用户采纳率等多维指标',
+            '建立关键错误场景收集与诊断机制，联合算法团队优化核心模块，系统稳定性提升至 99%'
+        ],
+        results: [
+            { value: '60%', label: '信息获取耗时缩短' },
+            { value: '80%', label: '纪要自动生成覆盖率' },
+            { value: '91%', label: '回答准确率' },
+            { value: '99%', label: '系统稳定性' }
+        ]
+    },
+    'AI商机查重系统': {
+        fullContent: [
+            '主导设计并落地 AI 商机查重系统，覆盖商机新建、审批及查重环节',
+            '成为各事业部标准化流程工具，商机审批平均耗时缩短70%',
+            '重复商机录入率显著下降，提升数据质量和销售效率',
+            '系统支持大规模并发处理，满足企业级应用需求'
+        ],
+        results: [
+            { value: '70%', label: '审批耗时缩短' },
+            { value: '显著', label: '重复录入率下降' },
+            { value: '标准化', label: '流程工具化' }
+        ]
+    },
+    '考前全真练': {
+        fullContent: [
+            '面向中考英语听说备考场景，打造家庭端全真模拟产品',
+            '解决学生练习时间有限、缺乏真实考试环境的痛点',
+            '产品上线首月销售额80万（单地市级），会员转化1万单',
+            '提供个性化学习路径和智能评估反馈'
+        ],
+        results: [
+            { value: '80万', label: '首月销售额' },
+            { value: '1万单', label: '会员转化' },
+            { value: '单地市级', label: '覆盖范围' }
+        ]
+    },
+    '智能英语听说考试系统': {
+        fullContent: [
+            '响应教育部英语听说改革政策，解决机房兼容性差、人工评分效率低、缺乏全场景数据闭环问题',
+            '系统覆盖12省、2800万考生、380万场考试',
+            '市场占有率从17%升至29%，成为行业领先产品',
+            '引入多引擎评分系统，评分准确率提升至95%'
+        ],
+        results: [
+            { value: '12省', label: '覆盖省份' },
+            { value: '2800万', label: '服务考生' },
+            { value: '29%', label: '市场占有率' },
+            { value: '95%', label: '评分准确率' }
+        ]
+    },
+    'AI英语口语对话系统': {
+        fullContent: [
+            '针对 K12 学生"哑巴英语"、教师批改效率低及评估体系单一的问题',
+            '打造行业首个全场景沉浸式 AI 口语教练',
+            '学生口语能力提升15%，留存率提升25%，教师批改效率提升35%',
+            '提供实时语音交互和个性化反馈'
+        ],
+        results: [
+            { value: '15%', label: '口语能力提升' },
+            { value: '25%', label: '留存率提升' },
+            { value: '35%', label: '批改效率提升' }
+        ]
+    },
+    'CRM内部系统优化': {
+        fullContent: [
+            '主导全链路优化与智能化升级，提升销售、服务效率及客户留存',
+            '财务审核周期由72小时缩短至15分钟',
+            '工单人工干预率降至5%，新商机模块人均销售产出提升18%',
+            '优化跨部门协作流程，提升整体运营效率'
+        ],
+        results: [
+            { value: '15分钟', label: '审核周期' },
+            { value: '5%', label: '人工干预率' },
+            { value: '18%', label: '销售产出提升' }
+        ]
+    },
+    '智慧作业平台': {
+        fullContent: [
+            '打造 AI 驱动智慧作业平台，覆盖作业布置、批改、分析与反馈全流程',
+            '教师平均批改时长由50分钟降至30分钟',
+            '客观题自动批改准确率达98%，高频错题掌握率提升30%',
+            '引入OCR+NLP技术，实现智能化作业处理'
+        ],
+        results: [
+            { value: '30分钟', label: '平均批改时长' },
+            { value: '98%', label: '自动批改准确率' },
+            { value: '30%', label: '错题掌握率提升' }
+        ]
+    },
+    '题库组卷系统': {
+        fullContent: [
+            '打造集题库管理、智能组卷与学情分析于一体的教育系统',
+            '解决教师组卷效率低、题目版权分散及家长辅导资源不足问题',
+            '上线3个月，DAU提升30%，教师MAU达1.2万，单月流水增长25%',
+            '支持智能推荐和个性化组卷功能'
+        ],
+        results: [
+            { value: '30%', label: 'DAU提升' },
+            { value: '1.2万', label: '教师MAU' },
+            { value: '25%', label: '流水增长' }
+        ]
+    }
+};
+
+// 打开项目弹窗
+function openProjectModal(card) {
+    const modal = document.getElementById('project-modal');
+    const title = card.querySelector('h3').textContent;
+    const description = card.querySelector('.project-description').textContent;
+    const image = card.querySelector('img').src;
+    const tags = Array.from(card.querySelectorAll('.project-tag')).map(tag => tag.textContent);
+    
+    const data = projectData[title] || { fullContent: [], results: [] };
+    
+    // 填充弹窗内容
+    document.getElementById('modal-img').src = image;
+    document.getElementById('modal-img').alt = title;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-desc').textContent = description;
+    
+    // 填充标签
+    const tagsContainer = document.getElementById('modal-tags');
+    tagsContainer.innerHTML = tags.map(tag => `<span class="modal-tag">${tag}</span>`).join('');
+    
+    // 填充详细内容
+    const detailsContainer = document.getElementById('modal-full-content');
+    detailsContainer.innerHTML = `<ul>${data.fullContent.map(item => `<li>${item}</li>`).join('')}</ul>`;
+    
+    // 填充成果指标
+    const resultsContainer = document.getElementById('modal-results');
+    resultsContainer.innerHTML = data.results.map(result => `
+        <div class="metric-item">
+            <div class="metric-value">${result.value}</div>
+            <div class="metric-label">${result.label}</div>
+        </div>
+    `).join('');
+    
+    // 显示弹窗
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+}
+
+// 关闭项目弹窗
+function closeProjectModal() {
+    const modal = document.getElementById('project-modal');
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+}
+
 // 项目卡片交互
 function initProjectCards() {
     const projectCards = document.querySelectorAll('.project-card');
     
     projectCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
+        // 移除内联样式，让CSS控制hover效果
+        card.style.transform = '';
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-        
-        // 添加点击效果
+        // 添加点击效果 - 打开弹窗
         card.addEventListener('click', function() {
-            this.style.transform = 'translateY(-5px) scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            }, 150);
+            openProjectModal(this);
         });
+    });
+    
+    // 绑定关闭弹窗事件
+    const modal = document.getElementById('project-modal');
+    const closeBtn = modal.querySelector('.modal-close');
+    const overlay = modal.querySelector('.modal-overlay');
+    
+    closeBtn.addEventListener('click', closeProjectModal);
+    overlay.addEventListener('click', closeProjectModal);
+    
+    // ESC键关闭弹窗
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeProjectModal();
+        }
     });
 }
 
